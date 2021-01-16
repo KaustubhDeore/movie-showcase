@@ -9,7 +9,7 @@ form.addEventListener('submit', async function (e) {
     const searchTerm = form.elements.query.value;
     div.innerHTML = '';
     try {
-        const res = await axios.get(`http://api.tvmaze.com/search/shows?q=${searchTerm}`);
+        const res = await axios.get(`https://api.tvmaze.com/search/shows?q=${searchTerm}`);
         console.log(res);
         makeImage(res.data);
         form.elements.query.value = '';
