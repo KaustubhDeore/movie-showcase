@@ -10,13 +10,11 @@ form.addEventListener('submit', async function (e) {
     div.innerHTML = '';
     try {
         const res = await axios.get(`https://api.tvmaze.com/search/shows?q=${searchTerm}`);
-        console.log(res);
         makeImage(res.data);
         form.elements.query.value = '';
     }
     catch {
         div.textContent = 'Something went wrong...Check your connection.';
-        console.log('Error');
         form.elements.query.value = '';
     }
 
